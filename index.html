@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="StyleSheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="displayCalculator">
+            <div class="input">
+                <p class="js-calculator"></p>
+                <button class="allClear button" onclick="
+                calculation = '';
+                    displayCalculation();
+                    localStorage.setItem('calculation', calculation);
+                ">AC</button>
+            </div>
+            <div class="gridContainer">
+                <button class="button" onclick="
+                    updateCalculator('1');
+                ">1</button>
+                <button class="button" onclick="
+                    updateCalculator('2');
+                ">2</button>
+                <button class="button" onclick="
+                    updateCalculator('3');
+                ">3</button>
+                <button class="symbols button" onclick="
+                    updateCalculator(' + ');
+                ">&plus;</button>
+            </div>
+            <div class="gridContainer">
+                <button class="button" onclick="
+                    updateCalculator('4');
+                ">4</button>
+                <button class="button" onclick="
+                    updateCalculator('5');
+                ">5</button>
+                <button class="button" onclick="
+                    updateCalculator('6');
+                ">6</button>
+                <button class="symbols button" onclick="
+                    updateCalculator(' - ');
+                ">&minus;</button>
+            </div>
+            <div class="gridContainer">
+                <button class="button" onclick="
+                    updateCalculator('7');
+                ">7</button>
+                <button class="button" onclick="
+                    updateCalculator('8');
+                ">8</button>
+                <button class="button" onclick="
+                    updateCalculator('9');
+                ">9</button>
+                <button class="symbols button" onclick="
+                    updateCalculator(' * ');
+                ">&times;</button>
+            </div>
+            <div class="gridContainer">
+                <button class="button" onclick="
+                    updateCalculator('0');
+                ">0</button>
+                <button class="button" onclick="
+                    updateCalculator('.');
+                ">&#x2022;</button>
+                <button class="symbols button" onclick="
+                    calculation = eval(calculation);
+                    displayCalculation();
+                    localStorage.setItem('calculation', calculation);
+                ">&equals;</button>
+                <button class="symbols button" onclick="
+                    updateCalculator(' / ');
+                ">&div;</button>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
